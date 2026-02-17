@@ -46,12 +46,7 @@ class AppI18n {
       'Genera perfiles NordLynx (WireGuard) a partir de tokens de acceso de Linux.',
   };
 
-  String get languageLabel => switch (language) {
-    AppLanguage.japanese => '表示言語',
-    AppLanguage.english => 'Language',
-    AppLanguage.chinese => '语言',
-    AppLanguage.spanish => 'Idioma',
-  };
+  String get languageLabel => 'language';
 
   String get tokenLabel => 'NordVPN Access Token';
 
