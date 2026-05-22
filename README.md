@@ -61,3 +61,4 @@ flutter test
 
 - NordVPNの非公開API仕様変更により将来的に動作が変わる可能性があります。
 - 生成したトークンと設定ファイルは機密情報として扱ってください。
+- 本アプリは Nord Security（NordVPN）の**非公式**ツールです。App Store 提出手順は [docs/APP_STORE.md](docs/APP_STORE.md) を参照してください。

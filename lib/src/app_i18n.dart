@@ -36,6 +36,13 @@ class AppI18n {
 
   String get title => 'NordAccess';
 
+  String get screenTitle => switch (language) {
+    AppLanguage.japanese => 'WireGuard プロファイル生成',
+    AppLanguage.english => 'WireGuard profile generator',
+    AppLanguage.chinese => 'WireGuard 配置文件生成',
+    AppLanguage.spanish => 'Generador de perfiles WireGuard',
+  };
+
   String get subtitle => switch (language) {
     AppLanguage.japanese =>
       'Linux用アクセストークンからNordLynx (WireGuard) 設定ファイルを生成します。',
@@ -48,7 +55,54 @@ class AppI18n {
 
   String get languageLabel => 'language';
 
-  String get tokenLabel => 'NordVPN Access Token';
+  String get unofficialDisclaimer => switch (language) {
+    AppLanguage.japanese =>
+      '本アプリは Nord Security（NordVPN）の公式アプリではありません。VPN 接続は行わず、お客様の Linux 向けアクセストークンを用いて端末上で WireGuard 設定を生成します。トークンはプロファイル生成時のみ api.nordvpn.com へ送信され、開発者のサーバーには保存されません。',
+    AppLanguage.english =>
+      'This app is not affiliated with Nord Security (NordVPN). It does not provide VPN connectivity. It generates WireGuard configs on your device using your own Linux access token. The token is sent to api.nordvpn.com only when you generate a profile; it is not stored on the developer\'s servers.',
+    AppLanguage.chinese =>
+      '本应用与 Nord Security（NordVPN）无关联，不提供 VPN 连接。使用您自己的 Linux 访问令牌在设备上生成 WireGuard 配置。仅在生成配置时将令牌发送至 api.nordvpn.com，不会保存到开发者服务器。',
+    AppLanguage.spanish =>
+      'Esta app no está afiliada a Nord Security (NordVPN). No proporciona conexión VPN. Genera configuraciones WireGuard en tu dispositivo con tu propio token de acceso de Linux. El token solo se envía a api.nordvpn.com al generar un perfil; no se guarda en servidores del desarrollador.',
+  };
+
+  String get trademarkNotice => switch (language) {
+    AppLanguage.japanese =>
+      'NordVPN および NordLynx は Nord Security の商標です。',
+    AppLanguage.english =>
+      'NordVPN and NordLynx are trademarks of Nord Security.',
+    AppLanguage.chinese => 'NordVPN 和 NordLynx 是 Nord Security 的商标。',
+    AppLanguage.spanish =>
+      'NordVPN y NordLynx son marcas de Nord Security.',
+  };
+
+  String get privacyPolicyLabel => switch (language) {
+    AppLanguage.japanese => 'プライバシーポリシー',
+    AppLanguage.english => 'Privacy Policy',
+    AppLanguage.chinese => '隐私政策',
+    AppLanguage.spanish => 'Política de privacidad',
+  };
+
+  String get supportLabel => switch (language) {
+    AppLanguage.japanese => 'サポート',
+    AppLanguage.english => 'Support',
+    AppLanguage.chinese => '支持',
+    AppLanguage.spanish => 'Soporte',
+  };
+
+  String get couldNotOpenLink => switch (language) {
+    AppLanguage.japanese => 'リンクを開けませんでした。',
+    AppLanguage.english => 'Could not open the link.',
+    AppLanguage.chinese => '无法打开链接。',
+    AppLanguage.spanish => 'No se pudo abrir el enlace.',
+  };
+
+  String get tokenLabel => switch (language) {
+    AppLanguage.japanese => 'Linux 向けアクセストークン',
+    AppLanguage.english => 'Linux access token',
+    AppLanguage.chinese => 'Linux 访问令牌',
+    AppLanguage.spanish => 'Token de acceso de Linux',
+  };
 
   String get tokenHint => switch (language) {
     AppLanguage.japanese => '例: nrd_xxxxxxxxxxxxx',

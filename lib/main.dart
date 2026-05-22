@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'src/app_i18n.dart';
+import 'src/app_store_urls.dart';
 import 'src/country_flag.dart';
 import 'src/models.dart';
 import 'src/nordvpn_api.dart';
@@ -690,6 +692,13 @@ class _WireGuardProfilePageState extends State<WireGuardProfilePage> {
     _showMessage(_t.copiedToClipboard);
   }
 
+  Future<void> _openUrl(String url) async {
+    final uri = Uri.parse(url);
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+      _showMessage(_t.couldNotOpenLink, isError: true);
+    }
+  }
+
   void _showMessage(String message, {bool isError = false}) {
     final messenger = ScaffoldMessenger.of(context);
     messenger.hideCurrentSnackBar();
@@ -867,11 +876,38 @@ class _WireGuardProfilePageState extends State<WireGuardProfilePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          'NordVPN Access Token -> WireGuard Profile',
+                          t.screenTitle,
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         const SizedBox(height: 8),
                         Text(t.subtitle),
+                        const SizedBox(height: 12),
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFFFF8E1),
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: const Color(0xFFFFE082)),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                t.unofficialDisclaimer,
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
+                              const SizedBox(height: 6),
+                              Text(
+                                t.trademarkNotice,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall
+                                    ?.copyWith(color: const Color(0xFF5D4037)),
+                              ),
+                            ],
+                          ),
+                        ),
                         const SizedBox(height: 16),
                         DropdownButtonFormField<AppLanguage>(
                           initialValue: widget.language,
@@ -902,7 +938,7 @@ class _WireGuardProfilePageState extends State<WireGuardProfilePage> {
                           autocorrect: false,
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(),
-                            labelText: 'NordVPN Access Token',
+                            labelText: t.tokenLabel,
                             hintText: t.tokenHint,
                           ),
                         ),
@@ -1102,6 +1138,22 @@ class _WireGuardProfilePageState extends State<WireGuardProfilePage> {
                             ),
                           ),
                         ],
+                        const SizedBox(height: 20),
+                        Wrap(
+                          spacing: 12,
+                          runSpacing: 8,
+                          children: <Widget>[
+                            TextButton(
+                              onPressed: () =>
+                                  _openUrl(AppStoreUrls.privacyPolicy),
+                              child: Text(t.privacyPolicyLabel),
+                            ),
+                            TextButton(
+                              onPressed: () => _openUrl(AppStoreUrls.support),
+                              child: Text(t.supportLabel),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),

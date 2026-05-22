@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>プライバシーポリシー | NordAccess</title>
+  <meta name="description" content="NordAccess のプライバシーポリシー。収集データ、外部 API 通信、ファイル保存について。">
+  <link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-brand" href="./index.html">NordAccess</a>
+    <nav class="site-nav" aria-label="サイトメニュー">
+      <a href="./index.html">アプリ紹介</a>
+      <a href="./support.html">サポート</a>
+      <a href="./privacy.html" aria-current="page">プライバシーポリシー</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h1>プライバシーポリシー</h1>
+      <p class="updated">制定日: 2026年5月22日　最終更新: 2026年5月22日</p>
+
+      <p>porarrirr（以下「開発者」）が提供するアプリ「NordAccess」（以下「本アプリ」）のプライバシーポリシーです。本アプリをご利用になる前に必ずお読みください。本アプリを利用された場合、本ポリシーに同意したものとみなします。</p>
+
+      <div class="disclaimer">
+        <p><strong>【非公式アプリについて】</strong><br>
+        本アプリは Nord Security 社（NordVPN）の公式アプリではありません。NordVPN および NordLynx は Nord Security の商標または登録商標です。本アプリは、お客様がご自身で取得した Linux 向けアクセストークンを用いて WireGuard 形式の設定ファイルを端末上で生成する補助ツールです。VPN 接続そのものは提供しません。</p>
+      </div>
+
+      <h2>1. 開発者が収集する情報</h2>
+      <p>開発者は、氏名・メールアドレス・電話番号・位置情報・広告識別子などの<strong>個人情報を収集しません</strong>。アカウント登録、ログイン、広告表示、解析 SDK、トラッキングは実装していません。</p>
+
+      <h2>2. ユーザーが入力するデータ</h2>
+      <p>本アプリでは、ユーザーが入力したアクセストークンを、プロファイル生成のために <code>api.nordvpn.com</code>（Nord Security が運営する API）へ HTTPS で送信します。この送信はユーザーが「プロファイル生成」を実行したときのみ行われます。開発者のサーバーへトークンや生成結果を送信・保存することはありません。</p>
+      <ul>
+        <li>トークンはアプリ内に永続保存しません（アプリを終了すると入力欄の内容は消えます）。</li>
+        <li>生成された WireGuard 設定や QR コードは、ユーザーが明示的に「保存」「コピー」した場合のみ端末上に残ります。</li>
+      </ul>
+
+      <h2>3. 端末内のファイル操作</h2>
+      <p>ユーザーが「ファイル保存」「QR画像保存」を選択した場合、iOS のファイルピッカー等を通じて端末内の任意の場所へ保存できます。この操作に伴い OS が要求する権限のみを使用し、写真ライブラリの読み取りは行いません。</p>
+
+      <h2>4. 第三者への情報提供（開発者による）</h2>
+      <p>開発者は、ユーザーに関する情報を第三者へ販売・共有しません。ただし前項のとおり、ユーザー操作に基づき Nord Security の API へトークンが送信されます。Nord Security 側の取扱いは同社のプライバシーポリシーに従います。</p>
+
+      <h2>5. 通信の暗号化</h2>
+      <p>外部 API との通信は HTTPS（TLS）のみを使用します。独自の暗号方式は実装していません。</p>
+
+      <h2>6. お子さまのプライバシー</h2>
+      <p>本アプリは 13 歳未満のお子さまを対象としたサービスは提供しておらず、意図的に 13 歳未満の個人情報を収集しません。</p>
+
+      <h2>7. 保証の否認</h2>
+      <p>本アプリは「現状有姿」で提供されます。API 仕様の変更等により機能が変わる場合があります。Apple Inc. はアプリの内容について一切の責任を負いません。</p>
+
+      <h2>8. 本ポリシーの変更</h2>
+      <p>法令の改正や機能変更に伴い、予告なく改定する場合があります。改定後は本ページに最新版を掲載します。</p>
+
+      <h2>9. お問い合わせ</h2>
+      <p>本ポリシーに関するご質問は、<a href="https://github.com/porarrirr/nordacess/issues">GitHub Issues</a> からご連絡ください。</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="./index.html">← アプリ紹介へ</a></p>
+  </footer>
+</body>
+</html>
