@@ -35,3 +35,7 @@ flutter pub get
 flutter run
 flutter test
 ```
+
+## License
+
+The original code is proprietary and all rights are reserved. See [LICENSE](LICENSE). Direct dependency licenses are preserved in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), which is also included as an application asset.
